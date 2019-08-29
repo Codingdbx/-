@@ -1,0 +1,29 @@
+<script>
+// 通过构造函数方式创建，最大的区别就是函数的名称就是类的名称
+// 使用构造函数创建时，在函数内部是通过this关键字来完成属性的定义
+// 存在的问题，每一个对象中都会存在一个方法的copy，空间的占用率就会大大增加，可以将函数放到全局变更中
+function display(){
+}
+function Person(name,age){
+	this.name = name;
+	this.age = age;
+	// 所有的对象，都会为所有的对象都会为该方法分配空间
+	this.print = function(){
+		alert(this.name + "\t" + this.age)
+	}
+	// 如果将所有的函数的方法都定义成全局函数的时候，
+	// 这个函数就可以被window调用，破坏了对象的封装性
+	this.display = display;
+}
+// 通过new Person 创建对象
+var p1 = new Person("person1",34);
+p1.print();
+alert(p1 instanceof Person) // 检查对象的类型
+alert(p1.constructor == Person)
+var p2 = new Person("person2",35);
+alert(p1.print == p2.print);
+alert(p1.display == p2.display);
+// ---------------------------------
+
+
+</script>

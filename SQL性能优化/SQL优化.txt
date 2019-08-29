@@ -1,0 +1,26 @@
+1.索引
+  
+  根据数据规模设计，在 where 条件里的字段上加索引。
+
+2.范式
+
+  概念：以空间换时间
+
+3.数据水平拆分
+
+  Oracle 分区表，大表切分为 N 个小表：避免单个表数据无限增加。
+
+4.数据垂直拆分
+
+  MySQL读写分离：加硬件资源，增加数据库。
+
+5.定时任务
+  
+  根据业务场景设计
+
+
+Oracle查询性能低的语句
+
+  SELECT *  FROM (SELECT PARSING_USER_ID EXECUTIONS,   SORTS, COMMAND_TYPE, DISK_READS, SQL_FULLTEXT  FROM v$sqlarea  ORDER BY disk_reads DESC)  WHERE ROWNUM < 11;
+
+

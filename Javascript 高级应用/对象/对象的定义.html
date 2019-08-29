@@ -1,0 +1,29 @@
+<script>
+	// 在js中并不存在类，所以可以直接通过object来创建对象
+	// 由于没有类的约束，无法实现对象的重复使用并且没有一种约定，在操作时会带来问题
+	var person = new Object();
+	person.name = "person";
+	person.age = 32;
+	person.print = function(){
+		alert(this.name + "\t" + this.age)
+	}
+	person.print();
+	
+	// 通过JSON（javascript simple object natation）格式创建对象
+	// 通过属性名和属性值表示
+	var person1 = {
+		"name":"person1",
+		"age":23,
+		"print":function(){
+			alert(this.name + "\t" + this.age)
+		}
+	}
+	
+	person1.print();
+	
+	// 数组创建
+	var p = [{name:"person1",age:32},{name:"person2",age:43}];
+	
+	
+
+</script>

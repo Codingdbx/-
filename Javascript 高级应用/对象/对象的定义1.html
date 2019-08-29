@@ -1,0 +1,19 @@
+<script>
+// 这种方法没有办法得到对象的数据类型，因为全部是object 类型 
+function createFactory(name,age){
+	var o = new Object();
+	o.name = name;
+	o.age = age;
+	o.print = function(){
+		alert(this.name + "\t" + this.age);
+	}
+	return o;
+}
+
+var p1 = create("person1",34);
+var p2 = create("person2",35);
+
+alert(typeof p1)// 返回object类型
+
+
+</script>

@@ -1,0 +1,32 @@
+<script>
+	function fn(args){
+		// 在函数中有一个属性叫做arguments，通过这个属性可以取得相应的参数
+		alert(arguments.length);
+		// 在arguments 这个对象中有一个callee的方法，arguments.call(arg)可以反向调用
+	}
+	
+	fn("111",'3333')
+	
+	function fn1(num){
+		if(num < 1) return 1;
+		else return num * fn1(num - 1);// 函数的名称和方法名称偶合
+	
+	}
+	alert(fn1(5))
+	
+	var fn2 = fn1;
+	
+	alert(fn2(6))
+	
+	// 此时当将fn1 = null时，再调用将会出错
+	fn1 = null;
+	try {
+	alert(fn2(6))
+	} catch(e){}
+	
+	function fn1(num){
+		if(num < 1) return 1;
+		else return num * arguments.callee(num - 1);
+	}
+	alert("--->"+fn2(6))
+</script>

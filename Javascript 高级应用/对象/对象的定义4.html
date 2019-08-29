@@ -1,0 +1,15 @@
+<script>
+
+function Person(name,age){
+	this.name = name;
+	this.age = age;	
+}
+Person.prototype.print = function(){
+	alert(this.name + "\t"+this.age);
+}
+var p1 = new Person();
+var p2 = new Person();
+alert(p1.print == p2.print);
+
+
+</script>

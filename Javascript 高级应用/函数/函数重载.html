@@ -1,0 +1,28 @@
+<script>
+	
+	function sum(num1,num2){
+		return num1 + num2;
+	}
+	
+	function sum(num1){
+		return num1 + 100;
+	}
+	
+	alert(sum(10));
+
+	alert(sum(10,20));
+	
+	var sum = function(num1,num2){
+	}
+	
+	var sum = function(num1){
+	}
+	// 此时sum所指向的的空间从有两个参数的函数变化到只有一个参数的函数中
+	// 所有在js 中函数不存在重载
+	// 
+	var fn = new Function("num1","num2","alert(num1 + num2)");
+	// 所以函数就是一个对象
+	// 后面定义会覆盖前面定义的
+	
+	
+</script>

@@ -1,0 +1,27 @@
+<script>
+
+function Person(){
+
+}
+// 以下方式会重写原型，由于原型重写，而且没有通过
+// Person.prototype来指定，此时的constructor不会在指向Person
+//而是指定object
+Person.prototype = {
+	"name":"person1",
+	"age":32,
+	"print":function(){
+		alert(this.name + "\t" + this.age)
+	}
+}
+var p1 = new Person();
+alert(p1.constructor == Person)
+
+Person.prototype.display = function(){
+
+}
+
+Person.prototype.constructor = Person;
+
+
+
+</script>

@@ -1,0 +1,21 @@
+<script>
+	// 当需要创建一个类的时候，设置类的属性和方法需要通过this关键字来引用
+	// 但是特别注意：this关键字在调用时会根据不同的调用对象变得不同
+	var age = 50;
+	function printAge(){
+		alert(this.age);
+	}
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+		this.show = printAge;
+	}
+	
+	var c = new Person("p1",40);
+	// 使用以来调用show方法，等于调用了printAge()方法
+	// 此时的this是c,所以age就是40
+	c.show();
+	// 此时调用的对象等于window，printAge的this是window
+	printAge();
+	
+</script>

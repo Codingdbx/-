@@ -1,0 +1,38 @@
+<script>
+
+// 使用基于原型的创建可以将属性和方法设置为Person专有的，
+// 不能再通过window调用，如此就完成了封装
+function Person(){
+}
+Person.prototype.name="person";
+Person.prototype.age=32;
+Person.prototype.print = function(){
+	alert(this.name + "\t" + this.age);
+}
+
+function Person(name,age){
+	this.name = name;
+	this.age = age;
+}
+Person.prototype.print=function(){
+	alert(this.name + "\t" + this.age);
+}
+
+// 原型是js中非常特殊一个对象，当一个函数创建之后，会随之就产生一个原型对象
+// 当通过这个函数的构造函数创建了一个具体的对象之后，在这个具体的对象中就会
+// 有一个属性指向原型 
+
+
+
+Person.prototype={
+	"name":"person1",
+	"age":23,
+	print:function(){
+	}
+}
+var p1 = new Person();
+alert(p1.constructor == Person);
+Person.prototype.constructor = Person;
+alert(p1.constructor == Person);
+
+</script>

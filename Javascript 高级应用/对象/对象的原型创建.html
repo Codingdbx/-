@@ -1,0 +1,53 @@
+<script>
+
+function Person(){
+}
+Person.prototype = {
+	constructor:Person,
+	name:"person1",
+	age:23,
+	friends:["person2"],
+	say:function(){
+		alert(this.name + "\t"+this.age + "\t"+this.friends)
+	}
+}
+
+var p1 = new Person();
+// p1的friends去原型中找，会在原型中增加
+p1.friends.push("Mike");// 此时原型中的内存模型变了。
+
+p1.say();
+
+// ---------------------为了原型带来的问题，此处需要通过组合构造函数和原型来实现----------------------------
+// 将属性在构造函数中定义，将方法在原型中定义
+// 这种有效集合了两者的优点
+function Person(name,age,friends){
+	this.name = name;
+	this.age = age;
+	this.friends = friends;
+}
+
+Person.prototype.say = function(){
+	alert(this.name + "\t"+this.age + "\t"+this.friends)
+}
+
+// -------------------------------动态原型方式-----------------------------
+// 为了让定义的方式更加符合类的需求，就把定义原型代码放置到Person这个构造函数中
+function Person(name,age){
+	this.name = name;
+	this.age = age;
+	if(!Person.prototype.say){
+		Person.prototype.say = function(){
+			alert(this.name + "\t"+this.age + "\t"+this.friends)
+		}
+	}
+	
+}
+
+
+
+
+
+
+
+</script>

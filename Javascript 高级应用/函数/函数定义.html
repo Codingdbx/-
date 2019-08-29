@@ -1,0 +1,34 @@
+<script>
+	// 定义方式1 
+	function fn1(){
+		alert("function fn1 def----------")
+	}
+	// 函数是一个特殊的对象，是一个Function类的实例。其实在内存中存储的操作是通过一个键值对存储。
+	alert(typeof fn1)
+	
+	// 当fn2指向fn1时，会在内存中复制新的function
+	// 以下是通过函数copy来完成赋值的，二个引用并没有指向同一个对象
+	var fn2 = fn1;
+	
+	fn2();
+	
+	fn1 = function(){
+		alert("new function fn1 def")
+	}
+	
+	
+	fn2(); 
+	// 函数虽然是一个对象，但是和对象有一些区别，对象是通过引用的指向完成对象的赋值，而函数是通过对象的COPY来完成的。
+	// 虽然fn1变了，但是不会影响fn2
+	// function 非常像我们的java string对象
+	// 二个值虽然相同，但是指向的是同一块空间
+	
+
+	////  二个指向同一块空间，当一个变化时另一个也会变化      
+	var ob1 = new Object();
+	var ob2 = ob1;
+	ob2.name = "2222";	
+	alert(ob1.name);
+	
+	
+</script>

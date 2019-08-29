@@ -1,0 +1,52 @@
+(function( window, undefined ) {
+$(¡°#ss¡±)
+
+$(function(){
+
+
+})
+	var jQuery = (function() {
+
+		var jQuery = function( selector, context ) {
+				
+				return new jQuery.fn.init( selector, context, rootjQuery );
+			};
+
+		jQuery.fn = jQuery.prototype = {
+			constructor: jQuery,
+			init: function( selector, context, rootjQuery ) {
+				.......
+			}
+		};
+
+
+		jQuery.fn.init.prototype = jQuery.fn;		
+		
+		return jQuery;
+
+	})();
+jQuery.fn = function(){
+xxxxx
+}
+
+	window.jQuery = window.$ = jQuery;
+	
+})( window );
+
+function fn( window) {}
+
+var fn = function( window) {};
+
+fn£¨window £©
+
+
+(function( window) {
+
+window.jQuery = window.$ = jQuery;
+
+})( window );
+
+
+$.fn()
+
+

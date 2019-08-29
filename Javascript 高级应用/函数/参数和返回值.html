@@ -1,0 +1,94 @@
+﻿<script>
+
+
+	// 函数是对象，可以把函数作用参数传递
+	function Function(fun,arg){
+		return fun(arg);
+	}
+	
+	
+	function say(str){
+		//alert("hello "+ str);
+		return 122;
+	}
+	
+	// 可以用
+	var ob = Function(say,"sss");
+	
+	
+	
+	// 定义一个函数
+	function fn1(args){
+		// 此时返回的是一个函数
+		var re1 = function(num) {
+			
+			return args + num;
+		
+		}
+		
+		return re1;
+		
+	}
+	
+	var fn =  fn1(200);
+	 fn(10);
+	 
+	 
+	// 默认是按字符串排序
+	var as = [9,232,13,180];
+	as.sort();
+	alert(as)
+	/**
+	** arrayObject.sort(sortby) 可选。规定排序顺序。必须是函数。
+	若 a 小于 b，在排序后的数组中 a 应该出现在 b 之前，则返回一个小于 0 的值。
+若 a 等于 b，则返回 0。
+若 a 大于 b，则返回一个大于 0 的值。
+	**/
+	
+	as.sort(function(a,b){
+		return a - b;
+	})
+	
+	alert(as)
+	
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+		this.toString = function(){
+			 return this.name + "\t"+ this.age;
+		}
+	}
+	
+	function sortByProperty(propertyName){
+		var sortFun = function(ob1,ob2){
+			return ob1[propertyName] > ob2[propertyName];
+		}
+		return sortFun;
+	}
+	
+	var p1 = new Person("p1",23);
+	var p2 = new Person("p2",20);
+	var p3 = new Person("p3",30);
+	var p4 = new Person("p4",10);
+	 
+	var ps = [p1,p2,p3,p4];
+	
+	ps.sort(sortByProperty("age"));
+	
+	/*ps.sort(function(p1,p2){
+		return p1.age - p2.age;
+	});*/
+	
+	
+	
+	
+	
+	alert(ps)
+	
+	/*foreach(args,function(k,o){
+		alert(k + "\t" + o);
+	})*/
+	
+	
+	
+</script>

@@ -1,0 +1,32 @@
+<script>
+
+	// call 和apply可以通过函数名称来调用函数，
+	//对于apply而言，有两个参数，第一个是调用的上下文，第二个是参数数组，可以直接把arguments传递进去。
+	// 第一个参数是上下文对象，后面的参数是不同的函数参数
+	var initAmount = 10;
+	function printAmount(){
+		var totalAmount = this.initAmount;
+		for(var i = 0;i < arguments.length;i++){
+			totalAmount += arguments[i];
+		}
+		this.totalAmount = totalAmount;
+		return totalAmount;
+	}
+	
+	alert(printAmount.apply(this,[50,10]));
+	alert(window.totalAmount);
+	
+	function Person(name,initAmount){
+		this.name = name;
+		this.initAmount = initAmount;
+		
+	}
+	// 此时上下p
+	var p = new Person("p1",100);
+	alert(printAmount.apply(p,[1,2]));
+	alert(p.totalAmount);
+	alert(printAmount.call(p,1,4))
+	
+	
+	
+</script>

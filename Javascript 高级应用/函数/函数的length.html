@@ -1,0 +1,21 @@
+<script>
+
+	function fn1(){}
+	function fn2(num1,num2){}
+	function fn3(num2,num3,num4){}
+	alert(fn1.length) // 2
+	alert(fn2.length) //3
+
+
+	//--------- prototype -----------
+	function Person(name,age){
+		this.age = age;
+		this.name = name;
+	}
+	
+	Person.prototype.print = function(){
+		alert(this.name + "\t" + this.age)
+	}
+	
+	
+</script>

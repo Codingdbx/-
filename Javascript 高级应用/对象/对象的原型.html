@@ -1,0 +1,33 @@
+<script>
+
+function Person(){
+
+}
+
+
+Person.prototype.name="person";
+Person.prototype.age=32;
+Person.prototype.print = function(){
+	alert(this.name + "\t" + this.age);
+}
+
+var p1 = new Person();
+p1.print();
+
+var p2 = new Person();
+p2.name = "person2";
+p2.print();
+
+// 检查某个对象是否是某个函数的原型
+alert(Person.prototype.isPrototypeOf(p1))
+// 检查某个对象的constructor
+alert(p1.constructor == Person)
+// 检查某个属性是否是自己的属性
+alert(p1.hasOwnProperty("name"));
+// 删除空间中的属性
+delete p1.name;
+alert(p1.hasOwnProperty("name"));
+// 检查某个对象在原型或者自己中包含有某个属性，通过in
+alert("name" in p2)
+
+</script>
