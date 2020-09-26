@@ -15,8 +15,7 @@ public class CustomTypeFilter implements TypeFilter{
 
 	
 	@Override
-	public boolean match(MetadataReader metadataReader, MetadataReaderFactory metadataReaderFactory)
-			throws IOException {
+	public boolean match(MetadataReader metadataReader, MetadataReaderFactory metadataReaderFactory) throws IOException {
 
 		System.out.println("call CustomTypeFilter "+ metadataReader.getClassMetadata().getClassName());
 		

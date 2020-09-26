@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Spring Annotation 编程之生命周期管理/代码/SpringTraning3" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Spring Annotation 编程之组件注册/SpringTraning2" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JDK1.8新特性/代码/Java8Traning" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Spring Annotation 编程之面向切面编程/代码/SpringTraning" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/SpringTraning" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

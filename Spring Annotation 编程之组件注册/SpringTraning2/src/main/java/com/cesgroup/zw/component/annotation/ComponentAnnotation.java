@@ -23,8 +23,7 @@ public class ComponentAnnotation {
 	
 	public static void main(String[] args) {
 		
-		ApplicationContext 
-			context = new AnnotationConfigApplicationContext(ComponentAnnotation.class);
+		ApplicationContext context = new AnnotationConfigApplicationContext(ComponentAnnotation.class);
 		System.out.println("-----------------------");
 		print(context.getBeanDefinitionNames());
 		
